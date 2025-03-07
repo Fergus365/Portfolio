@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <div>
+          <img src="" alt="Logo" />
+        </div>
+      </header>
+      <aside className="App-aside">
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Project 1</a>
+            </li>
+            <li>
+              <a href="#">Project 2</a>
+            </li>
+            <li>
+              <a href="#">Project 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main className="App-main">
+        <section>
+          <h1>Welcome to my Porfolio</h1>
+        </section>
+
+        <section id=''>
+          <h2>Project 1</h2>
+        </section>
+
+        <section id=''>
+          <h2>Project 2</h2>
+        </section>
+
+        <section id=''>
+          <h2>Project 3</h2>
+        </section>
+      </main>
+      <footer className="App-footer">
+        <div>Footer</div>
+      </footer>
+    </div>
   )
 }
 
