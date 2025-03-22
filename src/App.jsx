@@ -1,50 +1,123 @@
 import './App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 
 function App() {
 
+  const sections = [
+    {
+      id: 1,
+      title: 'Welcome to my Porfolio',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 2,
+      title: 'Projekt 1',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 3,
+      title: 'Projekt 2',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 4,
+      title: 'Projekt 3',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+  ]
+
+  const handleClick = () => {
+    console.log('Button clicked');
+    document.getElementById('Mobile-list').classList.toggle('show');
+  }
+
+  useEffect(() => {
+    const handleWindowClick = (e) => {
+      if (!e.target.matches('button') && !e.target.matches('button > svg') && !e.target.matches('button > svg > path')) {
+        console.log('Window clicked', e.target);
+        document.getElementById('Mobile-list').classList.remove('show');
+      }
+    };
+
+    window.addEventListener('click', handleWindowClick);
+
+    return () => {
+      window.removeEventListener('click', handleWindowClick);
+    };
+  }, []);
+
   return (
-    <div className="App">
+    <>
       <header className="App-header">
         <div>
-          <img src="" alt="Logo" />
+          <button onClick={handleClick}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <img src="null" alt="Logo" />
         </div>
+        <nav className="Mobile-nav">
+          <ul id='Mobile-list' className='Mobile-list'>
+            {
+              sections.map(section => (
+                <li>
+                  <a href={`#${section.id}`}>
+                    <img src={section.url} alt={section.alt} />
+                    <h2>{section.title}</h2>
+                  </a>
+                </li>
+              )
+              )
+            }
+          </ul>
+        </nav>
       </header>
       <aside className="App-aside">
         <nav>
           <ul>
-            <li>
-              <a href="#">Project 1</a>
-            </li>
-            <li>
-              <a href="#">Project 2</a>
-            </li>
-            <li>
-              <a href="#">Project 3</a>
-            </li>
+            {
+              sections.map(section => (
+                <li>
+                  <a href={`#${section.id}`}>
+                    <img src={section.url} alt={section.alt} />
+                    <h2>{section.title}</h2>
+                  </a>
+                </li>
+              )
+              )
+            }
           </ul>
         </nav>
       </aside>
       <main className="App-main">
-        <section>
-          <h1>Welcome to my Porfolio</h1>
-        </section>
-
-        <section id=''>
-          <h2>Project 1</h2>
-        </section>
-
-        <section id=''>
-          <h2>Project 2</h2>
-        </section>
-
-        <section id=''>
-          <h2>Project 3</h2>
-        </section>
+        {
+          sections.map(section => (
+            <section id={section.id}>
+              <div>
+                <h2>{section.title}</h2>
+                <p>{section.text}</p>
+              </div>
+              <div>
+                <img src={section.url} alt={section.alt} />
+              </div>
+            </section>
+          )
+          )
+        }
       </main>
-      <footer className="App-footer">
-        <div>Footer</div>
-      </footer>
-    </div>
+    </>
   )
 }
 
