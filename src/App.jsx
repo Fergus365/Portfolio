@@ -80,14 +80,12 @@ function App() {
   ]
 
   const handleClick = () => {
-    console.log('Button clicked');
     document.getElementById('Mobile-list').classList.toggle('show');
   }
 
   useEffect(() => {
     const handleWindowClick = (e) => {
       if (!e.target.matches('button') && !e.target.matches('button > svg') && !e.target.matches('button > svg > path')) {
-        console.log('Window clicked', e.target);
         document.getElementById('Mobile-list').classList.remove('show');
       }
     };
@@ -112,7 +110,7 @@ function App() {
           <ul id='Mobile-list' className='Mobile-list'>
             {
               sections.map(section => (
-                <li>
+                <li key={`mobile-nav-key-${section.id}`}>
                   <a href={`#${section.id}`}>
                     <img src={section.url} alt={section.alt} />
                     <h2>{section.title}</h2>
@@ -130,7 +128,7 @@ function App() {
           <ul>
             {
               sections.map(section => (
-                <li>
+                <li key={`aside-key-${section.id}`}>
                   <a href={`#${section.id}`}>
                     <img src={section.url} alt={section.alt} />
                     <h2>{section.title}</h2>
@@ -145,7 +143,7 @@ function App() {
       <main className="App-main">
         {
           sections.map(section => (
-            <section id={section.id}>
+            <section key={`main-key-${section.id}`} id={section.id}>
               <div>
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
