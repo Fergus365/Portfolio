@@ -142,6 +142,7 @@ function App() {
       <aside className="App-aside">
         <nav>
           <ul>
+            <h2>Navigation</h2>
             {
               sections.map(section => (
                 <li key={`aside-key-${section.id}`}>
