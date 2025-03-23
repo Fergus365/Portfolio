@@ -47,6 +47,7 @@ html {
   position: absolute;
   top: 0;
   background-color: hsla(220, 13%, 18%, 0.25);
+  padding: 0 1rem;
 }
 
 .App-header .Hero {
