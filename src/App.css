@@ -70,13 +70,13 @@ html {
   color: white;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 .App-main section {
-  min-height: calc(100vh - 100px);
+  min-height: 100dvh;
   display: flex;
   flex-direction: row-reverse;
   padding: 2rem;
@@ -93,15 +93,12 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  flex: 2;
 }
 
-.App-main section div+div {
-  flex: 1;
-}
+.App-main section div+div {}
 
 .App-main section img {
-  width: 100%;
+  max-height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -193,13 +190,13 @@ html {
   }
 
   .App-main section {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 2rem;
     scroll-snap-stop: always;
     scroll-snap-align: start;
   }
 
   .App-main section:nth-child(odd) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
