@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,35 +9,66 @@ html {
   overflow-y: hidden;
 }
 
+/* Layout Styles */
 #root {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "header header header"
-    "aside main main"
+    "aside main main";
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100dvh;
 }
 
+/* Header Styles */
 .App-header {
   grid-area: header;
-  background-color: #282c34;
+  background-color: #D1D1CA;
   color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .App-header button {
   display: none;
 }
 
+.App-header .App-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+  position: absolute;
+  top: 0;
+  background-color: hsla(220, 13%, 18%, 0.25);
+}
+
+.App-header .Hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background-image: url('./assets/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Aside Styles */
 .App-aside {
   grid-area: aside;
-  background-color: red;
+  background-color: #C6805E;
   color: white;
   display: flex;
   justify-content: left;
   align-items: flex-start;
+  padding-top: calc(100px + 2rem);
 }
 
 .App-aside ul {
@@ -60,19 +92,18 @@ html {
   height: 30px;
 }
 
-.Mobile-nav {
-  display: none;
-}
-
+/* Main Content Styles */
 .App-main {
   grid-area: main;
   background-color: blue;
   color: white;
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - 100px);
-  overflow-y: scroll;
+  height: 100dvh;
   scroll-behavior: smooth;
+  overflow-y: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .App-main section {
@@ -82,10 +113,12 @@ html {
   padding: 2rem;
   gap: 1rem;
   scroll-snap-align: start;
+  background-color: #A1A195;
+  padding-top: calc(100px + 2rem);
 }
 
 .App-main section:nth-child(odd) {
-  background-color: #282c34;
+  background-color: #A75D39;
   flex-direction: row;
 }
 
@@ -95,33 +128,58 @@ html {
   gap: 1rem;
 }
 
-.App-main section div+div {}
-
 .App-main section img {
   max-height: 100%;
 }
 
+/* Mobile Navigation Styles */
+.Mobile-nav {
+  display: none;
+}
+
+.Mobile-nav img {
+  width: 30px;
+  height: 30px;
+}
+
+.Mobile-list {
+  display: none;
+  list-style: none;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  background-color: hsla(220, 13%, 18%, 0.25);
+  left: 0;
+  padding: 0 1rem;
+  top: 100px;
+}
+
+.Mobile-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.Mobile-list a h2 {
+  font-size: 1rem;
+}
+
+.show {
+  display: flex;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   #root {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
       "header"
-      "main"
-  }
-
-  .App-header {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
-  }
-
-  .App-header div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    min-height: 100px;
+      "main";
   }
 
   .Mobile-nav {
@@ -144,40 +202,9 @@ html {
     color: white;
   }
 
-  .Mobile-nav img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .Mobile-list {
-    display: none;
-    list-style: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 0.5rem;
-    position: absolute;
-    background-color: #282c34;
-    left: 0;
-    padding: 0 1rem;
-  }
-
-  .Mobile-list li a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    color: white;
-  }
-
-  .Mobile-list a h2 {
-    font-size: 1rem;
-  }
-
-  .Mobile-nav div {}
-
-  .show {
-    display: flex;
+  .App-header .App-header-top {
+    position: fixed;
+    top: 0;
   }
 
   .App-aside {
@@ -186,12 +213,11 @@ html {
 
   .App-main {
     scroll-snap-type: y mandatory;
-    -webkit-scroll-type: y mandatory;
+    overflow-y: scroll;
   }
 
   .App-main section {
     flex-direction: column;
-    padding: 2rem;
     scroll-snap-stop: always;
     scroll-snap-align: start;
   }

@@ -37,6 +37,46 @@ function App() {
       url: 'https://placehold.co/600x600',
       alt: 'Profile',
     },
+
+    {
+      id: 5,
+      title: 'Projekt 4',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 6,
+      title: 'Projekt 5',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 7,
+      title: 'Projekt 6',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 8,
+      title: 'Projekt 7',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
+
+    {
+      id: 9,
+      title: 'Projekt 8',
+      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
+      url: 'https://placehold.co/600x600',
+      alt: 'Profile',
+    },
   ]
 
   const handleClick = () => {
@@ -62,7 +102,7 @@ function App() {
   return (
     <>
       <header className="App-header">
-        <div>
+        <div className='App-header-top'>
           <button onClick={handleClick}>
             <FontAwesomeIcon icon={faBars} />
           </button>
@@ -83,6 +123,7 @@ function App() {
             }
           </ul>
         </nav>
+        <div className='Hero'>hej</div>
       </header>
       <aside className="App-aside">
         <nav>
