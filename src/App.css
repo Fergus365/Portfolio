@@ -100,7 +100,7 @@ html {
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: 100vh;
   scroll-behavior: smooth;
   overflow-y: hidden;
   scroll-snap-align: start;
@@ -108,7 +108,7 @@ html {
 }
 
 .App-main section {
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row-reverse;
   padding: 2rem;
