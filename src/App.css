@@ -13,7 +13,7 @@ html {
 #root {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "header header header"
     "aside main main";
@@ -116,6 +116,7 @@ html {
   scroll-snap-align: start;
   background-color: #A1A195;
   padding-top: calc(100px + 2rem);
+
 }
 
 .App-main section:nth-child(odd) {
@@ -177,7 +178,7 @@ html {
 @media (max-width: 768px) {
   #root {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas:
       "header"
       "main";
@@ -221,6 +222,7 @@ html {
     flex-direction: column;
     scroll-snap-stop: always;
     scroll-snap-align: start;
+    overflow-y: scroll;
   }
 
   .App-main section:nth-child(odd) {
