@@ -141,8 +141,8 @@ function App() {
       </header>
       <aside className="App-aside">
         <nav>
+          <h2>Navigation</h2>
           <ul>
-            <h2>Navigation</h2>
             {
               sections.map(section => (
                 <li key={`aside-key-${section.id}`}>
@@ -164,7 +164,7 @@ function App() {
               <div>
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
-                <a className='btn' href={`https://${section.subdomain}`}>{section.subdomain}</a>
+                <a className='btn' href={`https://${section.subdomain}`} aria-label={`Read more about this project`}>{section.subdomain}</a>
               </div>
               <div>
                 <img src={section.url} alt={section.alt} />
