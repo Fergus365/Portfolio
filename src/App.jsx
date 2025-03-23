@@ -8,7 +8,7 @@ function App() {
   const sections = [
     {
       id: 1,
-      title: 'proejkt 0',
+      title: 'Svenskradiospelare',
       text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
       url: 'https://placehold.co/600x600',
       alt: 'Profile',
@@ -81,12 +81,14 @@ function App() {
   ]
 
   const handleClick = () => {
+    console.log('button');
     document.getElementById('Mobile-list').classList.toggle('show');
   }
 
   useEffect(() => {
     const handleWindowClick = (e) => {
       if (!e.target.matches('button') && !e.target.matches('button > svg') && !e.target.matches('button > svg > path')) {
+        console.log('window');
         document.getElementById('Mobile-list').classList.remove('show');
       }
     };
@@ -127,7 +129,15 @@ function App() {
             }
           </ul>
         </nav>
-        <div className='Hero'>hej</div>
+        <div className='Hero'>
+          <div className='Hero-content'>
+            <h1>Kristoffer Karlsson</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem minima autem rerum sint, harum quod quisquam veritatis quibusdam eum, quos vero dolorem? Molestiae cum numquam, quam, a aliquam harum repellendus dolorem aliquid sequi nihil ea quidem aut maxime provident! Molestiae harum quibusdam accusamus velit dolorum expedita qui suscipit laudantium!</p>
+          </div>
+          <div className="Hero-arrow">
+            <a href='#Main'>&#x2193;</a>
+          </div>
+        </div>
       </header>
       <aside className="App-aside">
         <nav>
@@ -146,14 +156,14 @@ function App() {
           </ul>
         </nav>
       </aside>
-      <main className="App-main">
+      <main id='Main' className="App-main">
         {
           sections.map(section => (
             <section key={`main-key-${section.id}`} id={section.id}>
               <div>
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
-                <a href={`https://${section.subdomain}`}>{section.subdomain}</a>
+                <a className='btn' href={`https://${section.subdomain}`}>{section.subdomain}</a>
               </div>
               <div>
                 <img src={section.url} alt={section.alt} />

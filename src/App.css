@@ -38,6 +38,7 @@ html {
   scroll-snap-stop: always;
 
   background: transparent;
+  position: relative;
 }
 
 .App-header button {
@@ -62,6 +63,45 @@ html {
   align-items: center;
   height: 100dvh;
   background: transparent;
+}
+
+.Hero .Hero-content {
+  display: flex;
+  max-width: 960px;
+  flex-direction: column;
+  background-color: hsla(220, 13%, 18%, 0.25);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 1rem;
+}
+
+.Hero-arrow a {
+  text-decoration: none;
+  color: hsl(0, 0%, 96%);
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: hsl(0, 0%, 96%);
+  animation: float 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+    /* Move up */
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+    /* Move back down */
+  }
 }
 
 /* Aside Styles */
@@ -143,6 +183,15 @@ html {
   max-height: 100%;
 }
 
+.btn {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #F3A050;
+  color: hsl(0, 0%, 96%);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
 /* Mobile Navigation Styles */
 .Mobile-nav {
   display: none;
@@ -159,7 +208,7 @@ html {
   width: 100%;
   flex-direction: column;
   gap: 0.5rem;
-  position: absolute;
+  position: fixed;
   background-color: hsla(220, 13%, 18%, 0.25);
   left: 0;
   padding: 0 1rem;
