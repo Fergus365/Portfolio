@@ -12,6 +12,7 @@ function App() {
       text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
       url: 'https://placehold.co/600x600',
       alt: 'Profile',
+      subdomain: '/svenskradiospelare.kristofferkarlsson.se',
     },
 
     {
@@ -99,7 +100,7 @@ function App() {
 
   return (
     <>
-      <header className="App-header">
+      <header id='Start' className="App-header">
         <div className='App-header-top'>
           <button onClick={handleClick}>
             <FontAwesomeIcon icon={faBars} />
@@ -108,6 +109,11 @@ function App() {
         </div>
         <nav className="Mobile-nav">
           <ul id='Mobile-list' className='Mobile-list'>
+            <li key={`mobile-nav-key-start`}>
+              <a href='#Start'>
+                <h2>Start</h2>
+              </a>
+            </li>
             {
               sections.map(section => (
                 <li key={`mobile-nav-key-${section.id}`}>
@@ -147,6 +153,7 @@ function App() {
               <div>
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
+                <a href={section.subdomain}>{section.subdomain}</a>
               </div>
               <div>
                 <img src={section.url} alt={section.alt} />
