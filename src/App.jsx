@@ -107,7 +107,7 @@ function App() {
           <button onClick={handleClick}>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <img src="null" alt="Logo" />
+          <img src="https://placehold.co/32x32" alt="Logo" />
         </div>
         <nav className="Mobile-nav">
           <ul id='Mobile-list' className='Mobile-list'>
