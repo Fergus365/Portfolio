@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 function App() {
   const [userData, setUserData] = useState([]);
   const [commitsData, setCommitsData] = useState([]);
-  const [reposData, setReposData] = useState([]);
 
   useEffect(() => {
     async function fetchUser() {
@@ -15,7 +14,6 @@ function App() {
         .then(json => setUserData(json))
         .catch(error => console.log('Ett fel med att hämta data uppstod', error));
     }
-
 
     async function fetchAllCommits(repos) {
 
@@ -46,8 +44,6 @@ function App() {
 
 
   }, [])
-
-  console.log(reposData)
 
 
 
