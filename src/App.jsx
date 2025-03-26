@@ -1,9 +1,61 @@
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  const [commitsData, setCommitsData] = useState([]);
+  const [reposData, setReposData] = useState([]);
+
+  useEffect(() => {
+    async function fetchUser() {
+      await fetch('https://api.github.com/users/Fergus365')
+        .then(res => res.json())
+        .then(json => setUserData(json))
+        .catch(error => console.log('Ett fel med att hämta data uppstod', error));
+    }
+
+
+    async function fetchAllCommits(repos) {
+
+      await fetch(`https://api.github.com/users/Fergus365/repos`)
+        .then(res => res.json())
+        .then(json => {
+          repos = json.map((repo) => repo.name)
+          console.log('HEEELLOOO', repos)
+        })
+        .catch(error => console.log('Ett fel med att hämta data uppstod', error));
+
+      repos.forEach((repo) => {
+        const repoName = repo
+        fetch(`https://api.github.com/repos/Fergus365/${repoName}/commits`)
+          .then(res => res.json())
+          .then(json => {
+            setCommitsData(prevCommits => [...prevCommits, ...json])
+            console.log('DATA', json)
+          })
+          .catch(error => console.log('Ett fel med att hämta data uppstod', error));
+      })
+
+    }
+
+    fetchUser();
+    fetchAllCommits();
+
+
+
+  }, [])
+
+  console.log(reposData)
+
+
+
+  console.log(userData);
+
+  console.log('commits', commitsData)
+
+  // https://api.github.com/repos/Fergus365/{repo}/commits
 
   const sections = [
     {
@@ -131,7 +183,17 @@ function App() {
         </nav>
         <div className='Hero'>
           <div className='Hero-content'>
-            <h1>Kristoffer Karlsson</h1>
+            <h2 className='Hero-content-title'>GitHub Profile</h2>
+            <div>
+              <img className='Hero-content-img' src={userData.avatar_url} alt="Avatar" />
+              <div>
+                <h2 className='Hero-content-name'>{userData.name}</h2>
+                <h4 className='Hero-content-user'>User - {userData.login}</h4>
+              </div>
+            </div>
+            <div>
+              <p>{commitsData.length} commits in {userData.public_repos} repositories</p>
+            </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem minima autem rerum sint, harum quod quisquam veritatis quibusdam eum, quos vero dolorem? Molestiae cum numquam, quam, a aliquam harum repellendus dolorem aliquid sequi nihil ea quidem aut maxime provident! Molestiae harum quibusdam accusamus velit dolorum expedita qui suscipit laudantium!</p>
           </div>
           <div className="Hero-arrow">
