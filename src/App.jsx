@@ -7,7 +7,7 @@ function App() {
   const [userData, setUserData] = useState([]);
   const [commitsData, setCommitsData] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     async function fetchUser() {
       await fetch('https://api.github.com/users/Fergus365')
         .then(res => res.json())
@@ -43,100 +43,51 @@ function App() {
 
 
 
-  }, [])
-
-
-
-  console.log(userData);
-
-  console.log('commits', commitsData)
+  }, [])*/
 
   // https://api.github.com/repos/Fergus365/{repo}/commits
 
   const sections = [
     {
       id: 1,
-      title: 'Svenskradiospelare',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-      subdomain: 'svenskradiospelare.kristofferkarlsson.se',
+      title: 'Swedish Radio Service',
+      text: 'This is a project developed using React, JavaScript, CSS, and HTML, where I use the Radio Browser API to fetch and play radio stations. The purpose of the project is to provide users with a simple and modern way to explore and listen to Swedish radio stations directly in the browser. The project combines modern frontend technologies with external APIs to create a smooth and responsive experience. By using the Radio Browser API, users can browse various radio stations, start and pause playback, and view information about each station.',
+      url: ['./radiodesk.webp', './radiomo.webp', './radiodeskmini.webp'],
+      alt: 'Swedish Radio Service preview image',
+      subdomain: 'kristofferkarlsson.se/swedishradioservice',
+      link: 'https://api.radio-browser.info/',
+      linkText: 'Radio Browser API',
     },
 
     {
       id: 2,
-      title: 'Projekt 1',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
+      title: 'TitanGym',
+      text: 'This is a WordPress website I created for a fictional gym brand called TitanGym. I built it using Elementor and a few helpful plugins, with smooth animations throughout to give it a modern and engaging feel. The site includes sections like maps showing gym locations, info on current and upcoming gyms, a small webshop for essentials, a blog, a services page, and detailed pages for both gym membership plans and personal trainer plans. To add more customization, especially to the blog/ archive page, I created a child theme of Hello Elementor, which gave me more control over the layout and design beyond what the standard builder allows.The end result is a responsive, user - friendly site that’s clean, functional, and built to reflect the energy of a growing gym brand.',
+      url: ['./titandesk.webp', './titanmo.webp', './titandeskmini.webp'],
+      alt: 'TitanGym preview image',
+      subdomain: 'kristofferkarlsson.se/titangym',
+      link: 'https://wordpress.org/download/',
+      linkText: 'WordPress',
     },
-
     {
       id: 3,
-      title: 'Projekt 2',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 4,
-      title: 'Projekt 3',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 5,
-      title: 'Projekt 4',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 6,
-      title: 'Projekt 5',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 7,
-      title: 'Projekt 6',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 8,
-      title: 'Projekt 7',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
-    },
-
-    {
-      id: 9,
-      title: 'Projekt 8',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed facilis nisi, ut distinctio a dolorem illo sint eos quos dolore error itaque quidem. Culpa, nemo ad dolorem ipsam adipisci suscipit quasi, quis in molestias magnam quisquam maiores hic. Obcaecati ullam, natus sapiente molestiae quos assumenda culpa rem totam autem.',
-      url: 'https://placehold.co/600x600',
-      alt: 'Profile',
+      title: 'MovieLibrary',
+      text: 'MovieLibrary is a project I built using React Native + Expo, making it available on both Android and iOS, as well as desktop. The app lets users browse and search for detailed movie information, such as Oscar wins, box office earnings, IMDb ratings, Rotten Tomatoes scores, and more. The data is fetched from an API I’ve created using MongoDB, Express and hosted with Render, providing a seamless and dynamic experience for movie enthusiasts on any device.',
+      url: ['./moviedesk.webp', './moviemo.webp', './moviedeskmini.webp'],
+      alt: 'MovieLibrary preview image',
+      subdomain: 'kristofferkarlsson.se/movielibrary',
+      link: 'https://projekt-node-express-api.onrender.com/movies',
+      linkText: 'API',
     },
   ]
 
   const handleClick = () => {
-    console.log('button');
     document.getElementById('Mobile-list').classList.toggle('show');
   }
 
   useEffect(() => {
     const handleWindowClick = (e) => {
       if (!e.target.matches('button') && !e.target.matches('button > svg') && !e.target.matches('button > svg > path')) {
-        console.log('window');
         document.getElementById('Mobile-list').classList.remove('show');
       }
     };
@@ -149,27 +100,24 @@ function App() {
   }, []);
 
   return (
-    <>
-      <header id='Start' className="App-header">
+    <div className="App">
+      <header id='home' className="App-header">
         <div className='App-header-top'>
+          <a href='#home'>
+            <h2 className='poppins-bold'>Home</h2>
+          </a>
           <button onClick={handleClick}>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <img src="https://placehold.co/32x32" alt="Logo" />
         </div>
         <nav className="Mobile-nav">
           <ul id='Mobile-list' className='Mobile-list'>
-            <li key={`mobile-nav-key-start`}>
-              <a href='#Start'>
-                <h2>Start</h2>
-              </a>
-            </li>
             {
               sections.map(section => (
                 <li key={`mobile-nav-key-${section.id}`}>
                   <a href={`#${section.id}`}>
-                    <img src={section.url} alt={section.alt} />
-                    <h2>{section.title}</h2>
+                    <img loading='lazy' src={section.url[2]} alt={section.alt} />
+                    <h2 className='poppins-bold'>{section.title}</h2>
                   </a>
                 </li>
               )
@@ -178,35 +126,28 @@ function App() {
           </ul>
         </nav>
         <div className='Hero'>
+
           <div className='Hero-content'>
-            <h2 className='Hero-content-title'>GitHub Profile</h2>
-            <div>
-              <img className='Hero-content-img' src={userData.avatar_url} alt="Avatar" />
-              <div>
-                <h2 className='Hero-content-name'>{userData.name}</h2>
-                <h4 className='Hero-content-user'>User - {userData.login}</h4>
-              </div>
-            </div>
-            <div>
-              <p>{commitsData.length} commits in {userData.public_repos} repositories</p>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem minima autem rerum sint, harum quod quisquam veritatis quibusdam eum, quos vero dolorem? Molestiae cum numquam, quam, a aliquam harum repellendus dolorem aliquid sequi nihil ea quidem aut maxime provident! Molestiae harum quibusdam accusamus velit dolorum expedita qui suscipit laudantium!</p>
+            <h1 className='poppins-bold'>Hello!</h1>
+            <p className='nunito-sans-regular'>
+              I'm currently studying to become a Webmaster at University West in Sweden, with a strong focus on both front-end and back-end development. Through my education and personal projects, I’ve gained hands-on experience building modern, responsive, and user-friendly web applications—with performance and user experience at the core.</p>
           </div>
+
           <div className="Hero-arrow">
-            <a href='#Main'>&#x2193;</a>
+            <a href='#projects'><span className='nunito-sans-bold'>My Projects</span><i class="fa-solid fa-arrow-down"></i></a>
           </div>
         </div>
       </header>
       <aside className="App-aside">
         <nav>
-          <h2>Navigation</h2>
+          <h2 className='poppins-bold'>My Projects</h2>
           <ul>
             {
               sections.map(section => (
                 <li key={`aside-key-${section.id}`}>
                   <a href={`#${section.id}`}>
-                    <img src={section.url} alt={section.alt} />
-                    <h2>{section.title}</h2>
+                    <img loading='lazy' src={section.url[2]} alt={section.alt} />
+                    <h2 className='poppins-bold'>{section.title}</h2>
                   </a>
                 </li>
               )
@@ -215,24 +156,31 @@ function App() {
           </ul>
         </nav>
       </aside>
-      <main id='Main' className="App-main">
+      <main id='projects' className="App-main">
         {
           sections.map(section => (
             <section key={`main-key-${section.id}`} id={section.id}>
               <div>
-                <h2>{section.title}</h2>
-                <p>{section.text}</p>
-                <a className='btn' href={`https://${section.subdomain}`} aria-label={`Read more about this project`}>{section.subdomain}</a>
+                <h2 className='poppins-bold'>{section.title}</h2>
+                <p className='nunito-sans-regular'>{section.text}</p>
+                <a className='btn nunito-sans-bold' href={`https://${section.subdomain}`}>Try it! <i class="fa-solid fa-rocket"></i></a>
+                {section.link && section.linkText == 'WordPress' && (
+                  <a className='btn nunito-sans-bold' href={section.link}>{section.linkText} <i class="fa-brands fa-wordpress"></i></a>
+                )}
+                {section.link && section.linkText.includes('API') && (
+                  <a className='btn nunito-sans-bold' href={section.link}>{section.linkText} <i class="fa-solid fa-database"></i></a>
+                )}
               </div>
-              <div>
-                <img src={section.url} alt={section.alt} />
+              <div className='img-container'>
+                <img loading='lazy' src={section.url[0]} alt={section.alt} />
+                <img loading='lazy' src={section.url[1]} alt={section.alt} />
               </div>
             </section>
           )
           )
         }
       </main>
-    </>
+    </div>
   )
 }
 
