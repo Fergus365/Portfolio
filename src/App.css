@@ -1,3 +1,12 @@
+.black-text {
+  color: #2B2B2B !important;
+}
+
+.herowadwad {
+  justify-content: center;
+  text-align: center;
+}
+
 /* Global Styles */
 * {
   margin: 0;
@@ -11,7 +20,7 @@ html {
 
 #root {
   height: 100vh;
-  background-image: url('./assets/hero_bg.webp');
+  background-image: url('./assets/hero_bg.jpg');
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
@@ -75,7 +84,7 @@ html {
 
 .Hero .Hero-content {
   display: flex;
-  max-width: 570px;
+
   flex-direction: column;
   border-radius: 8px;
   margin: 0 1rem;

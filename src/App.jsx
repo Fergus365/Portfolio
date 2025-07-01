@@ -125,16 +125,16 @@ function App() {
             }
           </ul>
         </nav>
-        <div className='Hero'>
+        <div className='Hero herowadwad'>
 
           <div className='Hero-content'>
-            <h1 className='poppins-bold'>Hello!</h1>
-            <p className='nunito-sans-regular'>
-              I'm currently studying to become a Webmaster at University West in Sweden, with a strong focus on both front-end and back-end development. Through my education and personal projects, I’ve gained hands-on experience building modern, responsive, and user-friendly web applications—with performance and user experience at the core.</p>
+            <h1 className='poppins-bold black-text'>Hello!</h1>
+            <p className='nunito-sans-regular black-text'>
+              I'm currently studying to become a Webmaster at University West in Sweden, with a focus on front-end development. Through my education and personal projects, I’ve gained hands-on experience building modern, responsive, and user-friendly web applications with performance and user experience at the core.</p>
           </div>
 
           <div className="Hero-arrow">
-            <a href='#projects'><span className='nunito-sans-bold'>My Projects</span><i class="fa-solid fa-arrow-down"></i></a>
+            <a href='#projects'><span className='nunito-sans-bold black-text'>My Projects</span><i class="fa-solid fa-arrow-down black-text"></i></a>
           </div>
         </div>
       </header>
